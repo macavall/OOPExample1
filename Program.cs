@@ -6,24 +6,44 @@
         {
             Console.WriteLine("Hello, World!");
 
-            var myClass = new MyClass();
 
-            // Creating List of type MyClass
-            List<MyClass> myClassList = new List<MyClass>();
 
-            // Adding 3 MyClass objects to the list
-            // 2 ways of doing this
+            // ================================================
+            // ================================================
+            // Create 2 instances of MyClass and
+            // Configuring values in myClass objects
+            // ================================================
+            // ================================================
 
             // Way 1
+            var myClass = new MyClass();
             myClass.MyClassProperty = "MyClass1Property";
             myClass.MyClassField = "MyClass1Field";
 
             // Way 2
-            myClassList.Add(new MyClass 
+            var myClass2 = new MyClass ()
             { 
-                MyClassProperty = "MyClass1Property", 
-                MyClassField = "MyClass1Field" 
-            });
+                MyClassProperty = "MyClass2Property", 
+                MyClassField = "MyClass2Field" 
+            };
+
+            // ================================================
+            // ================================================
+            // Adding 3 MyClass objects to the list
+            // ================================================
+            // ================================================
+
+            // Creating List of type MyClass
+            List<MyClass> myClassList = new List<MyClass>();
+
+            myClassList.Add(myClass);
+            myClassList.Add(myClass2);
+
+            // Call the MyClassMethodFieldProperty Method for each class in the list myClassList
+            foreach(var myClassItem in myClassList)
+            {
+                myClassItem.MyClassMethodFieldProperty();
+            }
 
             Console.ReadLine();
         }
