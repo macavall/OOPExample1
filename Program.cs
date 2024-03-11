@@ -8,18 +8,22 @@
 
             var myClass = new MyClass();
 
-            Console.WriteLine("Writing out the values for MyClassProperty and MyClassField in that order: ");
+            // Creating List of type MyClass
+            List<MyClass> myClassList = new List<MyClass>();
 
-            myClass.MyClassProperty = "Hello from MyClassProperty!";
-            myClass.MyClassField = "Hello from MyClassField!";
+            // Adding 3 MyClass objects to the list
+            // 2 ways of doing this
 
-            Console.WriteLine();
-            Console.WriteLine();
+            // Way 1
+            myClass.MyClassProperty = "MyClass1Property";
+            myClass.MyClassField = "MyClass1Field";
 
-            Console.WriteLine("Executing MyClass Methods: ");
-
-            myClass.MyClassMethod();
-            myClass.MyClassMethodFieldProperty();
+            // Way 2
+            myClassList.Add(new MyClass 
+            { 
+                MyClassProperty = "MyClass1Property", 
+                MyClassField = "MyClass1Field" 
+            });
 
             Console.ReadLine();
         }
